@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction Button</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        #firstButton {
+            color: white;
+            background-color: rgb(255, 139, 139);
+        }
+
+        #secondButton {
+            color: white;
+            background-color: rgb(139, 172, 255);
+        }
+
+        #blue {
+            color: white;
+            background-color: rgb(4, 0, 255);
+        }
+
+        #green {
+            color: white;
+            background-color: rgb(16, 183, 60);
+        }
+
+        #resetBG {
+            color: white;
+            background-color: rgb(168, 217, 223);
+        }
+
+        button:hover {
+            background-color: #555;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interaction Button</h1>
+    </header>
+
+    <section>
+        <!-- Five buttons arranged vertically -->
+        <div>
+            <button id="firstButton" onclick="animateButtonClick(this); alert('first input:'+firstInt);">1st Button</button>
+            <button id="secondButton" onclick="animateButtonClick(this); alert('second input:'+secondInt);">2nd Button</button>
+            <button id="blue" onclick="animateButtonClick(this); document.body.style.backgroundColor = 'blue';">Blue</button>
+            <button id="green" onclick="animateButtonClick(this); document.body.style.backgroundColor = 'green';">Green</button>
+            <button id="resetBG" onclick="animateButtonClick(this); alert('Reset Background Color');document.body.style.backgroundColor = 'white';">Reset BG color</button>
+        </div>
+    </section>
+
+    <script>
+        function animateButtonClick(button) {
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 200);
+        }
+    </script>
+
+    <script>
+        var firstInt;
+        var secontInt;
+        firstInt=window.prompt("Enter first integer");
+        secondInt=window.prompt("Enter second integer");
+        if(firstInt > secondInt){
+            document.body.style.backgroundColor = 'lightblue';
+            document.write(firstInt + ">" + secondInt);
+        }else if(firstInt < secondInt){
+            document.body.style.backgroundColor = 'orange';
+            document.write(secondInt + ">" + firstInt);
+        }else{
+            document.body.style.backgroundColor = 'lightyellow';
+            document.write(secondInt + "==" + firstInt);
+        }
+    </script>
+
+</body>
+</html>
